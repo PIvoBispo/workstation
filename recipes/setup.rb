@@ -14,5 +14,8 @@ end
 
 template '/etc/motd' do
   source 'motd.erb'
+  variables(
+    :name => 'Pedro Ivo'
+  )
   action :create
 end
