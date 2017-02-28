@@ -13,7 +13,12 @@ package 'git' do
 end
 
 file '/etc/motd' do
-  content 'This server is the property of Pedro Ivo'
+  content "This server is the property of Pedro Ivo
+  HOSTNAME: #{node['hostname']}
+  IPADDRESS: #{node['ipaddress']}
+  CPU: #{node['cpu']['0']['mhz']} mhz
+  MEMORY: #{node['memory']['total']}	'
+"
   owner 'root'
   group 'root'
 end
